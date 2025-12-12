@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr" xml:lang="fr" dir="ltr" class="">
+  <head>
+    <title>Calculatrice</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <base href=".">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="robots" content="noindex">
+    <meta name="Generator" content="Jalios JCMS - Copyright (C) Jalios S.A. 2001 - 2022 - https://www.jalios.com/">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./calculatrice/bootstrap.css" media="all" data-elementquery-processed="">
+
+    <link rel="stylesheet" href="./calculatrice/calculatrice.css" media="all" data-elementquery-processed="">
+  </head>
+
+  <body
+    <!----------------------- Calculatrice portlet ----------------------->
+    <div class="fullDisplay PortletCalculatrice unitFieldEdition" itemscope="itemscope">
+      <script>
+        function affiche(param){
+          if (document.getElementById("result-field").value == "0"){
+              document.getElementById("result-field").value = "";
+          }
+          document.getElementById("result-field").value = document.getElementById("result-field").value + param;
+        }
+        function reset(){
+          document.getElementById("result-field").value = "0";
+        }
+        function calcul() {
+          document.getElementById("result-field").value = eval(document.getElementById("result-field").value);
+        }
+      </script>
+      <h1>calculatrice</h1>
+      <div class="container calculatrice">
+            <div class="row">
+        <div class="col-md-12">
+          <input id="result-field" readonly type="text" value="" class="result col-md-12"/>
+        </div>
+            </div> 
+        <div class="row">
+          <div></div>
+          <div class="col-md-9 button-number" onclick="javascript:reset()">
+            AC
+          </div>
+          <div class="col-md-3 button-number2" onclick="javascript:affiche('/')">
+            /
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3 button-number"  onclick="javascript:affiche('1')">
+            1
+          </div>
+          <div class="col-md-3 button-number" onclick="javascript:affiche('2')">
+            2
+          </div>
+          <div class="col-md-3 button-number" onclick="javascript:affiche('3')">
+            3
+          </div>
+          <div class="col-md-3 button-number2" onclick="javascript:affiche('*')">
+            *
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3 button-number" onclick="javascript:affiche('4')">
+            4
+          </div>
+          <div class="col-md-3 button-number" onclick="javascript:affiche('5')">
+            5
+          </div>
+          <div class="col-md-3 button-number" onclick="javascript:affiche('6')">
+            6
+          </div>
+          <div class="col-md-3 button-number2" onclick="javascript:affiche('-')">
+            -
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3 button-number" onclick="javascript:affiche('7')">
+            7
+          </div>
+          <div class="col-md-3 button-number" onclick="javascript:affiche('8')">
+            8
+          </div>
+          <div class="col-md-3 button-number" onclick="javascript:affiche('9')">
+            9
+          </div>
+          <div class="col-md-3 button-number2" onclick="javascript:affiche('+')">
+            +
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 button-number"onclick="javascript:affiche('0')">
+          0
+          </div>
+          <div class="col-md-3 button-number" onclick="javascript:affiche('.')">
+          ,
+          </div>  
+          <div class="col-md-3">
+            <div class="glow-on-hover" onclick="javascript:calcul()"><div class=temorary>
+              =
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>  
+    <!----------------------- Fin de la Calculatrice portlet ----------------------->
+  </body>
+</html>
